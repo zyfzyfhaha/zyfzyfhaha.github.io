@@ -60,8 +60,11 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
-# avatar:
+# avatar
 avatar: /uploads/avatar.png
+
+#duoshuo
+duoshuo_shortname: zyfzyfhaha
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
