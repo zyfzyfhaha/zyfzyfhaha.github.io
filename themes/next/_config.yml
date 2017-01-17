@@ -319,9 +319,9 @@ mathjax:
 # you can visit http://dev.duoshuo.com get duoshuo user id.
 duoshuo_info:
   ua_enable: true
-  admin_enable: false
+  admin_enable: true
   user_id: 6376482839310894000
-  admin_nickname: 斑竹^^
+  admin_nickname: ←此人是斑竹^^
 
 
 # Facebook SDK Support.
