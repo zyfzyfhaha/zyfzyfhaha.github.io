@@ -18,6 +18,8 @@ categories: Oracle
 
 ## 配置本机Oracle client的环境变量 ##
 
+<!--more-->
+
 变量名 `ORACLE_HOME`
 变量值 `E:\Oracle\product\11.2.0\client_1`
 
