@@ -13,7 +13,8 @@ categories: Oracle
 
 # 一般步骤 #
 
-## 需要安装Oracle Client的客户端 ##
+## 安装Oracle Client的客户端 ##
+用虚拟机模拟远程机器，所以需要安装Oracle Client的客户端
 [Oracle Client 11G安装以及tnsnames.ora的操作](http://blog.csdn.net/lanchengxiaoxiao/article/details/39251947)
 
 ## 配置本机Oracle client的环境变量 ##
@@ -99,6 +100,8 @@ ROAD =
 
 ## PL SQL设置 ##
 个人下的是绿色版，tools-preferences配置为：
+![PL SQL设置](/uploads/PLSQL设置.png)
+
 注意：登陆PL SQL前需要在远程服务器（虚拟机）上创建登陆的用户和表空间，然后用新建的用户登陆。
 [这篇博文有详细操作](http://www.cnblogs.com/furenjian/articles/2889787.html)
 
