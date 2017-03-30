@@ -1,7 +1,6 @@
----Guide of a performance testing framework: Locust
-title: Locust
-date: 2017-03-19 14:03:17
-
+---
+title: Guide of a performance testing framework: Locust
+date: 2017-03-30 15:20:45
 tags:
 
 	- Locust
@@ -10,7 +9,6 @@ tags:
 categories: Locust
 
 ---
-
 # What is Locust? #
 Locust is an easy-to-use, distributed, user load testing tool. It is intended for load-testing web sites (or other systems) and figuring out how many concurrent users a system can handle.
 
@@ -26,5 +24,3 @@ Also you can install it by `pip install locustio==0.8a2` which mentioned in Locu
 
 
 # Quick Start #
-
-
