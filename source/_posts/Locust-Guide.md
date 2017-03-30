@@ -2,7 +2,9 @@
 title: Guide of a performance testing framework: Locust
 date: 2017-03-30 15:20:45
 tags:
+
 ---
+
 # What is Locust? #
 Locust is an easy-to-use, distributed, user load testing tool. It is intended for load-testing web sites (or other systems) and figuring out how many concurrent users a system can handle.
 
