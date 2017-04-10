@@ -281,7 +281,7 @@ highlight_theme: normal
 
 # MathJax Support
 mathjax:
-  enable: false
+  enable: true
   per_page: false
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
@@ -532,7 +532,8 @@ vendors:
   canvas_nest:
 
 reward_comment: 双手打字，请多支持(ˉ﹃ˉ)
-alipay: /uploads/zfb.png
+alipay: http://ojp72m756.bkt.clouddn.com/alipay.png
+wechatpay: http://ojp72m756.bkt.clouddn.com/wechat.png
 
 # Assets
 css: css
