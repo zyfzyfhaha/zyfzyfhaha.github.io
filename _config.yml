@@ -64,7 +64,7 @@ pagination_dir: page
 avatar: /uploads/avatar.png
 
 #duoshuo
-duoshuo_shortname: zyfzyfhaha
+#duoshuo_shortname: zyfzyfhaha
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
