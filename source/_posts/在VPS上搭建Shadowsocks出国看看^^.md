@@ -103,3 +103,8 @@ PPS：搜Surge的时候差点下错，有兴趣的同学可以尝试一下(¯﹃
 # 结束撒花 #
 用ss的时候发现看u2b速度有点慢，看720P就卡死了。后来又研究了一哈kcptun，配好之后效果肛肛的，1080P无压力，抽空再写一篇^ ^。
 本篇到此为止，有啥问题可以一起讨论，谢谢大家收看。
+
+# Reference #
+[搬瓦工中文网](http://banwagong.cn/)
+[Shadowsocks' source code in GitHub](https://github.com/shadowsocks)
+[Shadowsocks 影梭全平台教程索引](https://busi.me/archives/32/)
