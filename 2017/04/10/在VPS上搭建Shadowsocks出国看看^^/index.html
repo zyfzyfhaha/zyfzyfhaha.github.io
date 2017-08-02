@@ -1,0 +1,899 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="VPS,Shadowsocks," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="简单介绍去年京东搞活动大出血买了个799块ac68u，一直在家当作50块的路由器用(¯﹃¯)。前段时间看到公司小哥有VPS，心血来潮心想自己也整个，刚好也能折腾一哈路由器。 神马是VPS &amp;amp; ShadowsocksVPS(Virtual Private Server):虚拟专用服务器。简单的说，vps就是放在国外的一台你的私人电脑，永远处于开机状态。而Shadowsocks呢，就相当于是个">
+<meta name="keywords" content="VPS,Shadowsocks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在VPS上搭建Shadowsocks出国看看^^">
+<meta property="og:url" content="https://zyfzyfhaha.github.io/2017/04/10/在VPS上搭建Shadowsocks出国看看^^/index.html">
+<meta property="og:site_name" content="再吃一块西瓜">
+<meta property="og:description" content="简单介绍去年京东搞活动大出血买了个799块ac68u，一直在家当作50块的路由器用(¯﹃¯)。前段时间看到公司小哥有VPS，心血来潮心想自己也整个，刚好也能折腾一哈路由器。 神马是VPS &amp;amp; ShadowsocksVPS(Virtual Private Server):虚拟专用服务器。简单的说，vps就是放在国外的一台你的私人电脑，永远处于开机状态。而Shadowsocks呢，就相当于是个">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ojp72m756.bkt.clouddn.com/kvm.png">
+<meta property="og:image" content="http://ojp72m756.bkt.clouddn.com/shadowsocks.json.png">
+<meta property="og:image" content="http://ojp72m756.bkt.clouddn.com/windows%20vps%20%E9%85%8D%E7%BD%AE.png">
+<meta property="og:image" content="http://ojp72m756.bkt.clouddn.com/youtube.png">
+<meta property="og:image" content="http://ojp72m756.bkt.clouddn.com/mac%20youtube.png">
+<meta property="og:image" content="http://ojp72m756.bkt.clouddn.com/u2b%20ip.png">
+<meta property="og:image" content="http://ojp72m756.bkt.clouddn.com/surge%20gay.png">
+<meta property="og:updated_time" content="2017-08-02T14:08:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在VPS上搭建Shadowsocks出国看看^^">
+<meta name="twitter:description" content="简单介绍去年京东搞活动大出血买了个799块ac68u，一直在家当作50块的路由器用(¯﹃¯)。前段时间看到公司小哥有VPS，心血来潮心想自己也整个，刚好也能折腾一哈路由器。 神马是VPS &amp;amp; ShadowsocksVPS(Virtual Private Server):虚拟专用服务器。简单的说，vps就是放在国外的一台你的私人电脑，永远处于开机状态。而Shadowsocks呢，就相当于是个">
+<meta name="twitter:image" content="http://ojp72m756.bkt.clouddn.com/kvm.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zyfzyfhaha.github.io/2017/04/10/在VPS上搭建Shadowsocks出国看看^^/"/>
+
+
+
+
+
+  <title> 在VPS上搭建Shadowsocks出国看看^^ | 再吃一块西瓜 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">再吃一块西瓜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://zyfzyfhaha.github.io/2017/04/10/在VPS上搭建Shadowsocks出国看看^^/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zyfzyfhaha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ojp72m756.bkt.clouddn.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="再吃一块西瓜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                在VPS上搭建Shadowsocks出国看看^^
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T12:27:25+08:00">
+                2017-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VPS/" itemprop="url" rel="index">
+                    <span itemprop="name">VPS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VPS/Shadowsocks/" itemprop="url" rel="index">
+                    <span itemprop="name">Shadowsocks</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>去年京东搞活动大出血买了个799块ac68u，一直在家当作50块的路由器用(¯﹃¯)。前段时间看到公司小哥有VPS，心血来潮心想自己也整个，刚好也能折腾一哈路由器。</p>
+<h2 id="神马是VPS-amp-Shadowsocks"><a href="#神马是VPS-amp-Shadowsocks" class="headerlink" title="神马是VPS &amp; Shadowsocks"></a>神马是VPS &amp; Shadowsocks</h2><p>VPS(Virtual Private Server):虚拟专用服务器。简单的说，vps就是放在国外的一台你的私人电脑，永远处于开机状态。而Shadowsocks呢，就相当于是个梯子。梯子的一头，放在国外的VPS上，就是ss的server端；梯子的另一头，放在你本地的终端上，就是ss的client端。两头一连起来，就能出国咯ヾ(o◕∀◕)ﾉヾ。<br><a id="more"></a></p>
+<h1 id="购买心仪的VPS"><a href="#购买心仪的VPS" class="headerlink" title="购买心仪的VPS"></a>购买心仪的VPS</h1><p>懒得自己去找，根据公司小哥的推荐，去搬瓦工上看了一圈，就先买了一个KVM架构的VPS一个月先试试水，2.88刀，而且支持支付宝付款。<br>整个购买步骤都是按照→<a href="http://banwagong.cn/" target="_blank" rel="external">搬瓦工中文网</a>中的文章来做的，大家可以去网站多逛逛，基本上大多数问题都能在上面得到解答。我买的是下面这款：</p>
+<p><img src="http://ojp72m756.bkt.clouddn.com/kvm.png" alt="搬瓦工KVM架构VPS"></p>
+<p>唯一的问题是网站提供的5%优惠码不能用，不知道是不是因为我这款刚上架新款的缘故。怒亏0.9941人民币肉有点儿痛的。。(｡•ˇ‸ˇ•｡)。买好之后按照邮件给的ip和port就能连上你的vps啦。</p>
+<h1 id="搭建Server端Shadowsocks"><a href="#搭建Server端Shadowsocks" class="headerlink" title="搭建Server端Shadowsocks"></a>搭建Server端Shadowsocks</h1><p>接下来先把国外的梯子架起来。安装和配置的步骤在→<a href="https://github.com/shadowsocks/shadowsocks/tree/master" target="_blank" rel="external">GitHub的源码</a>上写得很清楚，按步骤一步步来就可以了：</p>
+<ol>
+<li>因为我们的VPS默认os是centos6.8 32位的，所以用以下的命令：<ul>
+<li><code>yum install python-setuptools &amp;&amp; easy_install pip</code></li>
+<li><code>pip install git+https://github.com/shadowsocks/shadowsocks.git@master</code><br>这边有一个小坑：因为centos6.8 yum最高支持python2.6，如果要安装2.7的话就需要自己下载源码编译安装。具体坑在哪里有点忘记了，安装过程中会有warning。不要怕，不影响。</li>
+</ul>
+</li>
+<li>安装完成之后，就可以对我们server端的ss进行配置了。<ul>
+<li>终端里敲命令<code>vi /etc/shadowsocks.json</code></li>
+<li>按一下<code>i</code>键</li>
+<li>复制黏贴↓<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   &quot;server&quot;:&quot;my_server_ip&quot;,</div><div class="line">   &quot;server_port&quot;:8388,</div><div class="line">   &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">   &quot;local_port&quot;:1080,</div><div class="line">   &quot;password&quot;:&quot;mypassword&quot;,</div><div class="line">   &quot;timeout&quot;:300,</div><div class="line">   &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">   &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>需要替换的只有两个地方。”server”：替换成刚买的VPS的ip；”password”：替换成你自己的password。</p>
+<ul>
+<li>按一下esc键，再按<code>shift+：</code>键，再输入wq，最后敲回车。</li>
+<li>用命令<code>ssserver -c /etc/shadowsocks.json -d start</code>把配置好的服务在vps上启起来。</li>
+<li>用命令<code>ps aux|grep shadowsocks.json</code>检查一下：<br><img src="http://ojp72m756.bkt.clouddn.com/shadowsocks.json.png" alt="shadowsocks.json"><br>哦野，成功。</li>
+</ul>
+<h1 id="各平台的Shadowsocks-Client端配置"><a href="#各平台的Shadowsocks-Client端配置" class="headerlink" title="各平台的Shadowsocks Client端配置"></a>各平台的Shadowsocks Client端配置</h1><p>server端的ss配置完成就是成功一大半，接下去只要在自己终端把梯子的另一头架起来就ok了。</p>
+<h2 id="windows端"><a href="#windows端" class="headerlink" title="windows端"></a>windows端</h2><p>家里的台式机是win7 64位的，所以在GitHub上下载对应的版本 →<a href="https://github.com/shadowsocks/shadowsocks-windows/releases/tag/4.0.1" target="_blank" rel="external">戳我</a><br>下载完成之后，解压zip包，双击<code>Shadowsocks.exe</code>文件，任务栏右下角会多出一架小飞机。双击它后出现：<br><img src="http://ojp72m756.bkt.clouddn.com/windows%20vps%20%E9%85%8D%E7%BD%AE.png" alt="windows ss 配置"><br>点击添加按钮，然后回忆一下刚在<code>shadowsocks.json</code>中配置过的内容：</p>
+<ul>
+<li>服务器地址填写<code>server</code>的value</li>
+<li>服务器端口填写<code>server_port</code>的value</li>
+<li>密码填写<code>password</code>的value</li>
+<li>加密默认和文件中的<code>aes-256-cfb</code>保持一致</li>
+<li>代理端口填写<code>local_port</code>的value</li>
+<li>点击确定</li>
+</ul>
+<p>右下角任务栏右键点击小飞机，确认启用系统代理。迫不及待打开1024试一哈：</p>
+<p><img src="http://ojp72m756.bkt.clouddn.com/youtube.png" alt="youtube windows"></p>
+<p>吼吼，大功告成，叼叼叼⁽⁽ଘ( ˊᵕˋ )ଓ⁾⁾* </p>
+<h2 id="OS-X端-amp-IOS端"><a href="#OS-X端-amp-IOS端" class="headerlink" title="OS X端 &amp; IOS端"></a>OS X端 &amp; IOS端</h2><p>其实Client端的配置都是大同小异，附上MAC的客户端下载地址，大伙自己整一哈就可以了。<br>→<a href="https://busi.me/archives/173/" target="_blank" rel="external">戳我</a><br>配置之后的效果：</p>
+<ul>
+<li><p>MAC：<br><img src="http://ojp72m756.bkt.clouddn.com/mac%20youtube.png" alt="you2b mac"></p>
+</li>
+<li><p>iPhone：<br><img src="http://ojp72m756.bkt.clouddn.com/u2b%20ip.png" alt="u2b iPhone"></p>
+</li>
+</ul>
+<p>PS：iPhone的客户端推荐使用<code>Shadowrocket</code>，App Store售价18RMB，讲道理跟Surge比良心的（328他说。 (???<br>PPS：搜Surge的时候差点下错，有兴趣的同学可以尝试一下(¯﹃¯) ↓<br><img src="http://ojp72m756.bkt.clouddn.com/surge%20gay.png" alt="surge"></p>
+<h2 id="路由器端"><a href="#路由器端" class="headerlink" title="路由器端"></a>路由器端</h2><p>关于路由器的配置这里简单说下步骤：</p>
+<ol>
+<li>首先得有个智能路由器</li>
+<li>我的是ac68u，找到对应版本的固件。我把它刷成Merlin 380.65-X7.4 →<a href="http://koolshare.cn/forum.php?mod=viewthread&amp;tid=82624&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D68" target="_blank" rel="external">如果你也是这个路由器的话固件地址戳我</a></li>
+<li>升级固件</li>
+<li>找到Software center Tab，安装shadowsocks插件</li>
+<li>填写配置信息，就和之前任何client一样</li>
+<li>提交</li>
+</ol>
+<p>顺利的话就会发现，只要连到这个路由器wifi的设备，不用安装ss的client都可以顺利出国啦。</p>
+<h1 id="结束撒花"><a href="#结束撒花" class="headerlink" title="结束撒花"></a>结束撒花</h1><p>用ss的时候发现看u2b速度有点慢，看720P就卡死了。后来又研究了一哈kcptun，配好之后效果肛肛的，1080P无压力，抽空再写一篇^ ^。<br>本篇到此为止，有啥问题可以一起讨论，谢谢大家收看。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://banwagong.cn/" target="_blank" rel="external">搬瓦工中文网</a><br><a href="https://github.com/shadowsocks" target="_blank" rel="external">Shadowsocks’ source code in GitHub</a><br><a href="https://busi.me/archives/32/" target="_blank" rel="external">Shadowsocks 影梭全平台教程索引</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>双手打字，请多支持(ˉ﹃ˉ)</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ojp72m756.bkt.clouddn.com/wechat.png?v=1" alt="zyfzyfhaha WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ojp72m756.bkt.clouddn.com/alipay.png?v=1" alt="zyfzyfhaha Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VPS/" rel="tag"># VPS</a>
+          
+            <a href="/tags/Shadowsocks/" rel="tag"># Shadowsocks</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/16/本地连接远程Oracle11G/" rel="next" title="本地连接远程Oracle 11G">
+                <i class="fa fa-chevron-left"></i> 本地连接远程Oracle 11G
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODE1MC80NzIz"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ojp72m756.bkt.clouddn.com/avatar.png"
+               alt="zyfzyfhaha" />
+          <p class="site-author-name" itemprop="name">zyfzyfhaha</p>
+           
+              <p class="site-description motion-element" itemprop="description">千金难买早知道</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zyfzyfhaha" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://minyangcheng.github.io/" title="城哥" target="_blank">城哥</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://lymuxh.github.io/" title="穆小灰灰" target="_blank">穆小灰灰</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">1.</span> <span class="nav-text">简单介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#神马是VPS-amp-Shadowsocks"><span class="nav-number">1.1.</span> <span class="nav-text">神马是VPS & Shadowsocks</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#购买心仪的VPS"><span class="nav-number">2.</span> <span class="nav-text">购买心仪的VPS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建Server端Shadowsocks"><span class="nav-number">3.</span> <span class="nav-text">搭建Server端Shadowsocks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#各平台的Shadowsocks-Client端配置"><span class="nav-number">4.</span> <span class="nav-text">各平台的Shadowsocks Client端配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows端"><span class="nav-number">4.1.</span> <span class="nav-text">windows端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-X端-amp-IOS端"><span class="nav-number">4.2.</span> <span class="nav-text">OS X端 & IOS端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由器端"><span class="nav-number">4.3.</span> <span class="nav-text">路由器端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束撒花"><span class="nav-number">5.</span> <span class="nav-text">结束撒花</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zyfzyfhaha</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+</body>
+</html>
