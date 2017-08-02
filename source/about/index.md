@@ -5,4 +5,5 @@ comments: false
 
 ---
 
-自我介绍哦吼吼 
+wechat:wahawahawahaha
+欢迎骚扰ヾ(๑╹◡╹)ﾉ"
